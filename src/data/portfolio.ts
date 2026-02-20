@@ -1,27 +1,28 @@
 import { Github, Linkedin, Twitter, Mail, Code2, Palette, Zap, Globe } from "lucide-react";
 
 export const personalInfo = {
-    firstName: "Alex",
-    lastName: "Morgan",
-    fullName: "Alex Morgan",
-    role: "Full-Stack Developer & UI/UX Designer",
-    tagline: "I engineer resilient frontend architectures and intuitive interfaces. Bridging the gap between complex technical constraints and seamless user experiences.",
+    firstName: "Anurag",
+
+    fullName: "Anurag",
+    role: "DevOps Engineer",
+    tagline: "Focused on automation, cloud infrastructure, CI/CD pipelines, and scalable application deployment.",
+
     bio: [
-        "Hi! I'm Alex Morgan. I specialize in building robust, scalable web applications with a focus on deep technical implementation and refined user interfaces.",
-        "My engineering philosophy centers around maintainability, performance, and accessibility. I enjoy tackling complex architectural problems and distilling them into elegant, user-centric solutions.",
-        "Outside of IDEs, I contribute to open-source tooling, experiment with WebGL, and write about modern JavaScript ecosystems."
+        "I'm a DevOps-focused developer working on automation, containerized deployments, and modern web infrastructure.",
+        "I work with Docker, CI/CD pipelines, cloud services, and JavaScript-based application stacks.",
+        "Currently exploring scalable deployment workflows, infrastructure-as-code practices, and performance optimization."
     ],
-    location: "San Francisco, CA • Open to Remote",
+    location: "India • Remote-friendly",
     contactHeading: "Let's build something great",
     contactText: "I'm currently available for freelance work and full-time positions. If you have a project that you want to get started or think you need my help with something, then get in touch.",
     footerTech: "React · Three.js · Framer Motion · TypeScript"
 };
 
 export const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub", handle: "@alexmorgan" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", handle: "Alex Morgan" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter", handle: "@alexmorgan_dev" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email", handle: "hello@alexmorgan.dev" },
+    { icon: Github, href: "https://github.com/anurag", label: "GitHub", handle: "@anurag" },
+    { icon: Linkedin, href: "https://linkedin.com/in/anurag", label: "LinkedIn", handle: "Anurag" },
+    { icon: Twitter, href: "https://twitter.com/anurag", label: "Twitter", handle: "@anurag" },
+    { icon: Mail, href: "mailto:anurag@example.com", label: "Email", handle: "anurag@example.com" },
 ];
 
 export const competenciesData = [
