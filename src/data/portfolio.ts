@@ -5,7 +5,7 @@ export const personalInfo = {
 
     fullName: "Anurag",
     role: "DevOps Engineer",
-    tagline: "Focused on automation, cloud infrastructure, CI/CD pipelines, and scalable application deployment.",
+    tagline: "Focused on automation, cloud infrastructure, CI/CD pipelines, and scalable application development and deployment.",
 
     bio: [
         "I'm a DevOps-focused developer working on automation, containerized deployments, and modern web infrastructure.",
