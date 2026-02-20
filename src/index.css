@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === PORTFOLIO DARK THEME (REFINED) === */
+    --background: 228 15% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 228 15% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 228 15% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Cyan primary (Mint from image) */
+    --primary: 169 100% 50%;
+    --primary-foreground: 228 15% 7%;
+
+    /* Violet secondary (Magenta/Purple from image) */
+    --secondary: 289 100% 55%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 228 15% 14%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 169 100% 50%;
+    --accent-foreground: 228 15% 7%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 210 20% 92%;
+
+    --border: 228 12% 16%;
+    --input: 228 12% 14%;
+    --ring: 169 100% 50%;
+
+    /* Reduced corner rounding slightly for a sharper edge */
+    --radius: 0.5rem;
+
+    /* Custom portfolio tokens */
+    --cyan: 169 100% 50%;
+    --cyan-glow: 169 100% 60%;
+    --violet: 289 100% 55%;
+    --violet-glow: 289 100% 65%;
+    --glass-bg: 228 15% 12%;
+    --glass-border: 210 15% 22%;
+
+    /* Gradients (Vibrant matching the image) */
+    --gradient-hero: linear-gradient(145deg, hsl(228 15% 6%) 0%, hsl(228 15% 8%) 45%, hsl(289 30% 8%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--cyan)), hsl(var(--violet)));
+    --gradient-card: linear-gradient(145deg, hsl(228 15% 11% / 0.7), hsl(289 20% 11% / 0.5));
+    --gradient-text: linear-gradient(110deg, hsl(var(--cyan)), hsl(var(--violet)));
+
+    /* Glows (restrained but vibrant) */
+    --glow-cyan: 0 0 25px hsl(169 100% 50% / 0.25), 0 0 50px hsl(169 100% 50% / 0.1);
+    --glow-violet: 0 0 25px hsl(289 100% 55% / 0.25), 0 0 50px hsl(289 100% 55% / 0.1);
+    --glow-card: 0 4px 15px hsl(228 15% 3% / 0.4), 0 0 0 1px hsl(228 12% 16%);
+    --shadow-elegant: 0 15px 40px -10px hsl(228 15% 3% / 0.7), 0 0 0 1px hsl(228 12% 16%);
+
+    /* Sidebar */
+    --sidebar-background: 226 35% 5%;
+    --sidebar-foreground: 200 20% 94%;
+    --sidebar-primary: 188 100% 52%;
+    --sidebar-primary-foreground: 226 35% 5%;
+    --sidebar-accent: 226 25% 12%;
+    --sidebar-accent-foreground: 200 20% 94%;
+    --sidebar-border: 226 25% 14%;
+    --sidebar-ring: 188 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--cyan) / 0.4);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cyan) / 0.7);
+  }
+}
+
+@layer components {
+
+  /* Gradient text utility */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass card */
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+    box-shadow: var(--glow-card);
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--cyan) / 0.3);
+    box-shadow: var(--glow-cyan), var(--glow-card);
+  }
+
+  /* Glow button */
+  .btn-glow {
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-cyan);
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    box-shadow: var(--glow-cyan), 0 0 25px hsl(var(--cyan) / 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Outline glow button */
+  .btn-outline-glow {
+    background: transparent;
+    border: 1px solid hsl(var(--cyan) / 0.35);
+    color: hsl(var(--cyan));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-outline-glow:hover {
+    background: hsl(var(--cyan) / 0.08);
+    border-color: hsl(var(--cyan) / 0.7);
+    box-shadow: 0 0 15px hsl(var(--cyan) / 0.15);
+    transform: translateY(-1px);
+  }
+
+  /* Skill bar */
+  .skill-bar-fill {
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* Section heading line */
+  .section-line {
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply relative text-muted-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: hsl(var(--cyan));
+    transition: width 0.3s ease;
+    box-shadow: var(--glow-cyan);
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--cyan));
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Floating label input */
+  .input-glow {
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .input-glow:focus {
+    border-color: hsl(var(--cyan) / 0.6);
+    box-shadow: 0 0 0 3px hsl(var(--cyan) / 0.1);
+    outline: none;
+  }
+
+  /* Tag badge */
+  .tech-tag {
+    background: hsl(var(--cyan) / 0.1);
+    border: 1px solid hsl(var(--cyan) / 0.3);
+    color: hsl(var(--cyan));
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
