@@ -1,88 +1,77 @@
-import { Github, Linkedin, Twitter, Mail, Code2, Palette, Zap, Globe } from "lucide-react";
+import { Github, Linkedin, Mail, Code2, Server, Zap, Globe } from "lucide-react";
 
 export const personalInfo = {
     firstName: "Anurag",
 
     fullName: "Anurag",
-    role: "DevOps Engineer",
-    tagline: "Focused on automation, cloud infrastructure, CI/CD pipelines, and scalable application development and deployment.",
+    role: "DevOps Engineer + Full-Stack Developer",
+    tagline: "DevOps-focused engineer building reliable, secure, and scalable deployment workflows while supporting full-stack web development.",
 
     bio: [
-        "I'm a DevOps-focused developer working on automation, containerized deployments, and modern web infrastructure.",
-        "I work with Docker, CI/CD pipelines, cloud services, and JavaScript-based application stacks.",
-        "Currently exploring scalable deployment workflows, infrastructure-as-code practices, and performance optimization."
+        "I help teams and clients build, deploy, and maintain reliable applications using modern DevOps practices and cloud infrastructure.",
+        "My work revolves around CI/CD pipelines, containerized deployments, infrastructure automation, and cloud platforms like AWS, GCP, and Azure.",
+        "Alongside DevOps, I support full-stack web development using Node.js, Python, Next.js, and related technologies to deliver end-to-end solutions."
     ],
-    location: "India • Remote-friendly",
+    location: "Punjab, India • Remote-friendly",
     contactHeading: "Let's build something great",
-    contactText: "I'm currently available for freelance work and full-time positions. If you have a project that you want to get started or think you need my help with something, then get in touch.",
-    footerTech: "React · Three.js · Framer Motion · TypeScript"
+    contactText: "I'm currently open to freelance work and full-time positions. If you have a project you'd like to get started or need help with deployment, infrastructure, or development — feel free to reach out.",
+    footerTech: "React · Framer Motion · TypeScript"
 };
 
 export const socialLinks = [
-    { icon: Github, href: "https://github.com/anurag", label: "GitHub", handle: "@anurag" },
-    { icon: Linkedin, href: "https://linkedin.com/in/anurag", label: "LinkedIn", handle: "Anurag" },
-    { icon: Twitter, href: "https://twitter.com/anurag", label: "Twitter", handle: "@anurag" },
-    { icon: Mail, href: "mailto:anurag@example.com", label: "Email", handle: "anurag@example.com" },
+    { icon: Github, href: "https://github.com/Anurag-dev999", label: "GitHub", handle: "@Anurag-dev999" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/anurag-welcomtoprofile/", label: "LinkedIn", handle: "Anurag" },
+    { icon: Mail, href: "mailto:dev.anurag999@gmail.com", label: "Email", handle: "dev.anurag999@gmail.com" },
 ];
 
 export const competenciesData = [
     {
-        icon: Code2,
-        title: "Web Development",
-        desc: "Crafting fast, scalable web applications with modern frameworks and best practices.",
+        icon: Server,
+        title: "DevOps & Cloud",
+        desc: "Setting up CI/CD pipelines, containerized deployments, and cloud infrastructure for reliable application delivery.",
     },
     {
-        icon: Palette,
-        title: "UI/UX Design",
-        desc: "Designing intuitive, beautiful interfaces that delight users and drive engagement.",
+        icon: Code2,
+        title: "Web Development",
+        desc: "Building web applications with modern frameworks, focusing on clean code and practical functionality.",
     },
     {
         icon: Zap,
-        title: "Performance",
-        desc: "Optimizing for speed, accessibility, and a flawless experience across all devices.",
+        title: "Automation",
+        desc: "Automating build, test, and deployment workflows to reduce manual effort and improve consistency.",
     },
     {
         icon: Globe,
-        title: "Full-Stack",
-        desc: "End-to-end product development from database architecture to pixel-perfect UI.",
+        title: "Full-Stack Support",
+        desc: "End-to-end development support from backend services and databases to frontend interfaces.",
     },
 ];
 
 export const skillsData = [
-    { name: "React / Next.js", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Node.js / Express", level: 85 },
-    { name: "UI/UX Design", level: 88 },
-    { name: "Three.js / WebGL", level: 75 },
-    { name: "PostgreSQL / Supabase", level: 82 },
+    { name: "Docker" },
+    { name: "Kubernetes" },
+    { name: "GitHub Actions" },
+    { name: "Jenkins" },
+    { name: "AWS" },
+    { name: "GCP" },
+    { name: "Azure" },
+    { name: "Python" },
+    { name: "Node.js" },
+    { name: "Next.js" },
+    { name: "HTML / CSS" },
+    { name: "Tailwind CSS" },
+    { name: "Oracle SQL" },
 ];
 
 export const careerTimeline = [
     {
-        year: "2023–Present",
-        role: "Senior Frontend Engineer",
-        company: "FinTech Solutions",
-        desc: "Architecting a high-performance React scalable dashboard. Improved initial load times by 40% through code splitting and tree shaking.",
-    },
-    {
-        year: "2021–2023",
-        role: "Full-Stack Developer",
-        company: "E-Commerce StartX",
-        desc: "Developed secure Node.js microservices and implemented a comprehensive component library using Storybook.",
-    },
-    {
-        year: "2019–2021",
-        role: "Frontend Developer",
-        company: "Creative Digital",
-        desc: "Migrated legacy jQuery applications to modern React ecosystems, establishing CI/CD pipelines.",
-    },
-    {
-        year: "2018–2019",
-        role: "Web Developer",
-        company: "Freelance",
-        desc: "Delivered responsive web applications for various SMBs focusing on accessibility and performance.",
+        year: "2025",
+        role: "Cloud Computing Intern",
+        company: "Excellence Technology, Mohali",
+        desc: "Worked on cloud computing concepts and deployment practices. Gained exposure to infrastructure setup and DevOps workflows during a ~45 day internship.",
     },
 ];
+
 
 export const portfolioProjects = [
     {
@@ -150,49 +139,47 @@ export const portfolioProjects = [
 export const projectCategories = ["All", "SaaS", "E-commerce", "Web App", "Design System", "Backend", "Design"];
 
 export const primaryLanguageStack = [
-    { name: "React", icon: "⚛️", color: "hsl(188 100% 52%)" },
-    { name: "TypeScript", icon: "𝙏𝙎", color: "hsl(210 100% 56%)" },
+    { name: "Docker", icon: "🐳", color: "hsl(205 100% 55%)" },
+    { name: "Kubernetes", icon: "☸", color: "hsl(210 80% 55%)" },
+    { name: "GitHub Actions", icon: "⚙", color: "hsl(210 10% 70%)" },
+    { name: "Jenkins", icon: "🔧", color: "hsl(0 70% 50%)" },
+    { name: "AWS", icon: "☁", color: "hsl(35 90% 60%)" },
+    { name: "GCP", icon: "☁", color: "hsl(210 80% 55%)" },
+    { name: "Azure", icon: "☁", color: "hsl(205 100% 50%)" },
+    { name: "Python", icon: "🐍", color: "hsl(210 60% 55%)" },
     { name: "Node.js", icon: "⬡", color: "hsl(120 60% 50%)" },
     { name: "Next.js", icon: "▲", color: "hsl(0 0% 90%)" },
-    { name: "Three.js", icon: "◈", color: "hsl(188 100% 52%)" },
-    { name: "PostgreSQL", icon: "🐘", color: "hsl(210 60% 60%)" },
-    { name: "Docker", icon: "🐳", color: "hsl(205 100% 55%)" },
-    { name: "AWS", icon: "☁", color: "hsl(35 90% 60%)" },
-    { name: "Figma", icon: "✦", color: "hsl(263 60% 65%)" },
-    { name: "GraphQL", icon: "◈", color: "hsl(320 60% 60%)" },
-    { name: "Redis", icon: "⬡", color: "hsl(0 80% 55%)" },
-    { name: "Tailwind", icon: "〜", color: "hsl(188 80% 50%)" },
+    { name: "Tailwind CSS", icon: "〜", color: "hsl(188 80% 50%)" },
+    { name: "Oracle SQL", icon: "🗄", color: "hsl(0 80% 50%)" },
 ];
 
 export const domainExpertise = [
     {
-        title: "Frontend Architecture",
+        title: "DevOps & Cloud",
         items: [
-            { name: "React Ecosystem", level: 95 },
-            { name: "TypeScript", level: 92 },
-            { name: "State Management", level: 90 },
-            { name: "WebGL / Three.js", level: 78 },
-            { name: "Performance Eval", level: 85 },
+            { name: "Docker" },
+            { name: "Kubernetes" },
+            { name: "CI/CD Pipelines" },
+            { name: "GitHub Actions" },
+            { name: "Jenkins" },
+            { name: "AWS / GCP / Azure" },
+            { name: "Containerization" },
         ],
     },
     {
-        title: "Backend & Systems",
+        title: "Development",
         items: [
-            { name: "Node.js (Express/Nest)", level: 88 },
-            { name: "API Design (REST/GQL)", level: 85 },
-            { name: "Relational DBs (PG)", level: 82 },
-            { name: "Caching Layers", level: 75 },
-            { name: "CI/CD Pipelines", level: 72 },
+            { name: "Python" },
+            { name: "Node.js" },
+            { name: "HTML / CSS" },
+            { name: "Next.js" },
+            { name: "Tailwind CSS" },
         ],
     },
     {
-        title: "Product Design",
+        title: "Database",
         items: [
-            { name: "System Design", level: 88 },
-            { name: "Figma", level: 90 },
-            { name: "Wireframing", level: 87 },
-            { name: "User Research", level: 84 },
-            { name: "Motion Prototyping", level: 78 },
+            { name: "Oracle SQL" },
         ],
     },
 ];

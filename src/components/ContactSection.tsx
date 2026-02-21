@@ -131,7 +131,7 @@ export default function ContactSection() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    placeholder="Alex Johnson"
+                    placeholder="Your name"
                     className="input-glow w-full rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    placeholder="alex@example.com"
+                    placeholder="you@example.com"
                     className="input-glow w-full rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground"
                   />
                 </div>

@@ -2,36 +2,6 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { skillsData as skills, careerTimeline, competenciesData as coreCompetencies, personalInfo } from "../data/portfolio";
 
-function SkillBar({ name, level, index }: { name: string; level: number; index: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: -15 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="flex flex-col gap-2"
-    >
-      <div className="flex justify-between text-sm">
-        <span className="font-medium text-foreground">{name}</span>
-        <span className="font-mono text-xs" style={{ color: "hsl(var(--cyan))" }}>
-          {level}%
-        </span>
-      </div>
-      <div className="h-1.5 rounded-full bg-muted overflow-hidden">
-        <motion.div
-          className="h-full rounded-full skill-bar-fill"
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay: index * 0.1 + 0.25, ease: [0.16, 1, 0.3, 1] }}
-        />
-      </div>
-    </motion.div>
-  );
-}
-
 function SectionHeader({ label, title, subtitle }: { label: string; title: string; subtitle?: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -73,7 +43,7 @@ export default function AboutSection() {
         <SectionHeader
           label="Who I am"
           title="About Me"
-          subtitle="A passionate developer who loves turning complex problems into elegant solutions."
+          subtitle="DevOps-focused engineer who enjoys building reliable infrastructure and supporting full-stack development."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -120,9 +90,24 @@ export default function AboutSection() {
             {/* Skills */}
             <div className="flex flex-col gap-4">
               <h3 className="font-semibold text-foreground mb-2">Technical Skills</h3>
-              {skills.map((skill, i) => (
-                <SkillBar key={skill.name} {...skill} index={i} />
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill, i) => (
+                  <motion.span
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: i * 0.05 + 0.2 }}
+                    whileHover={{ scale: 1.08, y: -2 }}
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium text-foreground cursor-default"
+                    style={{
+                      background: "hsl(var(--cyan) / 0.08)",
+                      border: "1px solid hsl(var(--cyan) / 0.15)",
+                    }}
+                  >
+                    {skill.name}
+                  </motion.span>
+                ))}
+              </div>
             </div>
 
             {/* Timeline */}

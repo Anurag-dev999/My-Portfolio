@@ -63,7 +63,6 @@ export default function HeroSection() {
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tight">
               <span className="block text-foreground">{personalInfo.firstName}</span>
-              <span className="block text-gradient">{personalInfo.lastName}</span>
             </h1>
           </motion.div>
 

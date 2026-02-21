@@ -142,7 +142,7 @@ export default function ProjectsSection() {
         <SectionHeader
           label="My work"
           title="Projects"
-          subtitle="A selection of things I've built — from SaaS platforms to design systems."
+          subtitle="Projects coming soon. Stay tuned for updates."
         />
 
         {/* Filter tabs */}
