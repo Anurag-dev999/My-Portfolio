@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import ThreeScene from "./ThreeScene";
+import dynamic from "next/dynamic";
 import { personalInfo, socialLinks } from "../data/portfolio";
+
+const ThreeScene = dynamic(() => import("./ThreeScene"), { ssr: false });
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
