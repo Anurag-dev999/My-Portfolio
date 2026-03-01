@@ -15,13 +15,13 @@ function ProjectCard({ project, index }: { project: typeof portfolioProjects[0];
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="glass-card rounded-2xl overflow-hidden group"
+      className="glass-card rounded-2xl overflow-hidden group h-full flex flex-col"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       whileHover={{ y: -4 }}
     >
       {/* Image */}
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-52 overflow-hidden flex-shrink-0">
         <img
           src={project.image}
           alt={project.title}
@@ -48,6 +48,8 @@ function ProjectCard({ project, index }: { project: typeof portfolioProjects[0];
             >
               <motion.a
                 href={project.demo}
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 btn-glow px-4 py-2 rounded-lg text-sm font-semibold text-primary-foreground"
                 whileHover={{ scale: 1.02 }}
                 initial={{ y: 5, opacity: 0 }}
@@ -58,6 +60,8 @@ function ProjectCard({ project, index }: { project: typeof portfolioProjects[0];
               </motion.a>
               <motion.a
                 href={project.github}
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 btn-outline-glow px-4 py-2 rounded-lg text-sm font-semibold"
                 whileHover={{ scale: 1.02 }}
                 initial={{ y: 5, opacity: 0 }}
@@ -91,20 +95,20 @@ function ProjectCard({ project, index }: { project: typeof portfolioProjects[0];
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col gap-3">
+      <div className="p-5 flex flex-col gap-3 flex-1">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-bold text-lg text-foreground leading-tight">{project.title}</h3>
           <div className="flex gap-2 flex-shrink-0 pt-0.5">
-            <a href={project.github} className="text-muted-foreground hover:text-cyan-DEFAULT transition-colors" target="_blank" rel="noreferrer">
+            <a href={project.github} className="text-muted-foreground hover:text-cyan transition-colors" target="_blank" rel="noreferrer">
               <Github size={17} />
             </a>
-            <a href={project.demo} className="text-muted-foreground hover:text-cyan-DEFAULT transition-colors" target="_blank" rel="noreferrer">
+            <a href={project.demo} className="text-muted-foreground hover:text-cyan transition-colors" target="_blank" rel="noreferrer">
               <ExternalLink size={17} />
             </a>
           </div>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{project.desc}</p>
-        <div className="flex flex-wrap gap-1.5 pt-1">
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.5rem]">{project.desc}</p>
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
           {project.tech.map((t) => (
             <span key={t} className="tech-tag px-2 py-0.5 rounded-md">
               {t}
@@ -142,7 +146,7 @@ export default function ProjectsSection() {
         <SectionHeader
           label="My work"
           title="Projects"
-          subtitle="Projects coming soon. Stay tuned for updates."
+          subtitle="More Projects coming soon. Stay tuned for updates."
         />
 
         {/* Filter tabs */}
@@ -172,25 +176,22 @@ export default function ProjectsSection() {
         </div>
 
         {/* Grid */}
-        <motion.div
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          <AnimatePresence>
             {filtered.map((project, i) => (
               <motion.div
                 key={project.title}
-                layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.35 }}
+                className="flex"
               >
                 <ProjectCard project={project} index={i} />
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

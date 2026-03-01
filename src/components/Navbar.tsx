@@ -10,9 +10,11 @@ export default function Navbar() {
   const [active, setActive] = useState("Home");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (section: string) => {
@@ -92,6 +94,7 @@ export default function Navbar() {
       <button
         className="md:hidden text-foreground"
         onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label={mobileOpen ? "Close menu" : "Open menu"}
       >
         {mobileOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
@@ -110,7 +113,7 @@ export default function Navbar() {
                 <li key={link}>
                   <button
                     onClick={() => scrollTo(link)}
-                    className="w-full text-left px-8 py-3 text-sm font-medium transition-colors hover:text-cyan-DEFAULT"
+                    className="w-full text-left px-8 py-3 text-sm font-medium transition-colors hover:text-cyan"
                     style={{ color: active === link ? "hsl(var(--cyan))" : undefined }}
                   >
                     {link}

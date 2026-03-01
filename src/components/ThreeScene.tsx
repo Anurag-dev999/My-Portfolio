@@ -50,12 +50,12 @@ function GradientWireframeSphere() {
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1.5}>
       {/* Outer vibrant geometric wireframe */}
       <mesh ref={meshRef} material={material}>
-        <icosahedronGeometry args={[1.8, 3]} />
+        <icosahedronGeometry args={[1.8, 2]} />
       </mesh>
 
       {/* Subtle inner core shadow mapping to give it that deep glow effect */}
       <mesh>
-        <sphereGeometry args={[1.75, 32, 32]} />
+        <sphereGeometry args={[1.75, 24, 24]} />
         <meshBasicMaterial color="#030308" transparent opacity={0.88} />
       </mesh>
 
@@ -73,7 +73,7 @@ export default function ThreeScene() {
       style={{ background: "transparent" }}
       gl={{ antialias: true, alpha: true }}
     >
-      <Stars radius={100} depth={50} count={2500} factor={4} saturation={1} fade speed={0.5} />
+      <Stars radius={100} depth={50} count={1500} factor={4} saturation={1} fade speed={0.5} />
       <GradientWireframeSphere />
     </Canvas>
   );

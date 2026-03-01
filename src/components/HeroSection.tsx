@@ -3,7 +3,14 @@ import { ArrowDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import { personalInfo, socialLinks } from "../data/portfolio";
 
-const ThreeScene = dynamic(() => import("./ThreeScene"), { ssr: false });
+const ThreeScene = dynamic(() => import("./ThreeScene"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-cyan/20 border-t-cyan animate-spin" />
+    </div>
+  )
+});
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
@@ -91,7 +98,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg"
           >
             {personalInfo.tagline}
@@ -133,8 +140,8 @@ export default function HeroSection() {
               <motion.a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noreferrer"
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
                 aria-label={label}
                 className="text-muted-foreground transition-colors"
                 whileHover={{ scale: 1.1, color: "hsl(var(--cyan))" }}

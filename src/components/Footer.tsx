@@ -16,7 +16,7 @@ export default function Footer() {
           <span className="mx-2">·</span>
           <span>Built with</span>
           <Heart size={13} className="mx-1" style={{ color: "hsl(var(--cyan))", fill: "hsl(var(--cyan))" }} />
-          <span>by {personalInfo.fullName} · {new Date().getFullYear()}</span>
+          <span>by {personalInfo.fullName} · 2026</span>
         </div>
 
         <p className="text-xs text-muted-foreground font-mono">

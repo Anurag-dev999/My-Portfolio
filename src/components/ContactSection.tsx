@@ -18,12 +18,41 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
+    
     setSending(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSending(false);
-    setSent(true);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "",
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "New Inquiry from Portfolio",
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSent(true);
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        console.error("Form submission failed:", result);
+        alert("Something went wrong. Please try emailing me directly.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try emailing me directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -86,8 +115,8 @@ export default function ContactSection() {
                 <motion.a
                   key={label}
                   href={href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.1 + 0.3 }}
@@ -102,7 +131,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground">{label}</div>
-                    <div className="text-sm font-medium text-foreground group-hover:text-cyan-DEFAULT transition-colors">
+                    <div className="text-sm font-medium text-foreground group-hover:text-cyan transition-colors">
                       {handle}
                     </div>
                   </div>

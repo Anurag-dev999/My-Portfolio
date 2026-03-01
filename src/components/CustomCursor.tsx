@@ -10,6 +10,8 @@ export default function CustomCursor() {
   const rafRef = useRef<number>();
 
   useEffect(() => {
+    document.body.style.cursor = 'none';
+    
     const onMove = (e: MouseEvent) => {
       pos.current = { x: e.clientX, y: e.clientY };
       if (dotRef.current) {

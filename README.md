@@ -1,4 +1,4 @@
-# Alex Morgan | Portfolio
+# Anurag | Portfolio
 
 A high-performance, responsive developer portfolio built with modern web technologies.
 
