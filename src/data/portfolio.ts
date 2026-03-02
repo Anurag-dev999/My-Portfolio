@@ -82,12 +82,11 @@ export const portfolioProjects = [
         desc: "A modern cloud storage platform featuring secure authentication, file uploads, folder navigation, real-time storage tracking, and shareable public links. Designed with a premium UI and optimized Supabase backend for scalable file management workflows.",
         tech: [
             "Next.js",
-            "React",
+            
             "TypeScript",
             "Supabase",
-            "PostgreSQL",
             "Tailwind CSS",
-            "Supabase Storage"
+            
         ],
         image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
         demo: "https://skydriv.netlify.app/",
